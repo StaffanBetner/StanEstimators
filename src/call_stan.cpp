@@ -1,3 +1,11 @@
+#ifdef __EMSCRIPTEN__
+    #define __linux__ 1
+#endif
+#include <tbb/tbb_machine.h>
+#ifdef __EMSCRIPTEN__
+    #undef __linux__
+#endif
+
 #include <Rcpp.h>
 #include <cmdstan/command.hpp>
 
